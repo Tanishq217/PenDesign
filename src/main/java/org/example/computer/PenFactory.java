@@ -6,7 +6,6 @@ public class PenFactory {
     public static Pen createPen(Enums.PenType type, Enums.InkColor color, Enums.StartingMechanism mechanism) {
         StartingStrategy startStrategy;
 
-        // Create appropriate starting mechanism
         switch (mechanism) {
             case CAP:
                 startStrategy = new CapMechanism();
@@ -18,7 +17,6 @@ public class PenFactory {
                 throw new IllegalArgumentException("Unknown mechanism: " + mechanism);
         }
 
-        // Create appropriate pen type
         switch (type) {
             case BALLPOINT:
                 return new BallpointPen(startStrategy, color);

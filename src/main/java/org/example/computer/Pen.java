@@ -8,4 +8,7 @@ public interface Pen {
     void start();
     void close();
 
+    Enums.InkColor getColor();
+
+    Enums.PenType getType();
 }
